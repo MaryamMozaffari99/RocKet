@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    // Order of  the secuence 
+    //PARAMETERS - for tuning, typically set in the editor
+
+    //CACHE - e.g. refrences for readability or speed 
+
+    //STATE - private instance (member) variables 
+
+
+
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
-
+    [SerializeField] AudioClip mainEngine;
     // here to access better
     Rigidbody rb;
     AudioSource audioSource;
+
+    //it's for e.g. "bool isAlive";
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +48,9 @@ public class Movement : MonoBehaviour
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                ///audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
+               
             }
         }
         else
@@ -44,6 +59,9 @@ public class Movement : MonoBehaviour
         }
 
     }
+
+
+
         void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A))
@@ -62,6 +80,7 @@ public class Movement : MonoBehaviour
 
     }
 
+
      void ApplyRotation(float rotationThisFrame)
     {
         rb.freezeRotation = true; //freezing rtation so we cam maually rotate
@@ -70,4 +89,7 @@ public class Movement : MonoBehaviour
 
         rb.freezeRotation = false; // unfreezing rotation so the physics system can take over
     }
+
+
+
 }
