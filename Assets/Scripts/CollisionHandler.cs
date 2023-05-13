@@ -23,7 +23,9 @@ public class CollisionHandler : MonoBehaviour
 
     { 
         if (isTransitioning)
-        {return;}
+        {
+            return;
+        }
        switch (other.gameObject.tag )
         {
             case "Friendly":
