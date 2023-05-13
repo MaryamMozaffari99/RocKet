@@ -22,7 +22,7 @@ public class CollisionHandler : MonoBehaviour
     void OnCollisionEnter(Collision other)
 
     { 
-        if (isTransitioning == false)
+        if (isTransitioning)
         {return;}
        switch (other.gameObject.tag )
         {
