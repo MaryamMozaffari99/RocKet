@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    // Order of  the sequence
+
+    //PARAMETERS - for tuning, typically set in the editor
+
+    //CACHE - e.g. refrences for readability or speed 
+
+    //STATE - private instance (member) variables 
+
+
 
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
