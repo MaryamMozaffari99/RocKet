@@ -4,20 +4,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    // Order of  the sequence
- 
-    //PARAMETERS - for tuning, typically set in the editor
-
-    //CACHE - e.g. refrences for readability or speed 
-
-    //STATE - private instance (member) variables 
-
-
 
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 1f;
     [SerializeField] AudioClip mainEngine;
-
     [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem leftThrusterParticles;
     [SerializeField] ParticleSystem rightThrusterParticles;
@@ -47,59 +37,49 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            //Debug.Log("Pressed SPACE - Thrusting");
-            //rb.AddRelativeForce(0, 1, 0);
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
-            if (!audioSource.isPlaying)
-            {
-                ///audioSource.Play();
-                audioSource.PlayOneShot(mainEngine);
-
-            }
-            if (!mainEngineParticles.isPlaying)
-            {
-                mainEngineParticles.Play();
-            }
-
+            StartThrusting();
         }
         else
         {
-            audioSource.Stop();
-            mainEngineParticles.Stop();
+            StopThrusting();
         }
 
     }
 
-    void ProcessRotation()
+    private void StartThrusting()
     {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        if (!audioSource.isPlaying)
+        {
+            ///audioSource.Play();
+            audioSource.PlayOneShot(mainEngine);
+
+        }
+        if (!mainEngineParticles.isPlaying)
+        {
+            mainEngineParticles.Play();
+        }
+    }
+    private void StopThrusting()
+    {
+        audioSource.Stop();
+        mainEngineParticles.Stop();
+    }
+
+    void ProcessRotation()
+         {
         if (Input.GetKey(KeyCode.A))
         {
-            //Debug.Log("Rotating Left");
-            if (!rightThrusterParticles.isPlaying)
-            {
-                rightThrusterParticles.Play();
-            }
-            //ApplyRotation(rotationThrust);
-
+            RotationLeft();
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            // Debug.Log("Rotating Right");
-            //  transform.Rotate(- Vector3.forward * rotationThrust * Time.deltaTime);
-            ApplyRotation(-rotationThrust);
-            if (!leftThrusterParticles.isPlaying)
-            {
-                leftThrusterParticles.Play();
-            }
+            RotationRight();
         }
         else
         {
-            rightThrusterParticles.Stop();
-            leftThrusterParticles.Stop();
-
+            StopRotating();
         }
-
-
 
 
 
@@ -112,5 +92,28 @@ public class Movement : MonoBehaviour
             rb.freezeRotation = false; // unfreezing rotation so the physics system can take over
         }
 
+        void RotationLeft()
+        {
+            ApplyRotation(rotationThrust);
+            if (!rightThrusterParticles.isPlaying)
+            {
+                rightThrusterParticles.Play();
+            }
+        }
+
+        void RotationRight()
+        {
+            ApplyRotation(-rotationThrust);
+            if (!leftThrusterParticles.isPlaying)
+            {
+                leftThrusterParticles.Play();
+            }
+        }
+    }
+
+    private void StopRotating()
+    {
+        rightThrusterParticles.Stop();
+        leftThrusterParticles.Stop();
     }
 } 
