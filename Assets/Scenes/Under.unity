@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706798050133009712, guid: 4bee1994d83fcff478d6a2ff552bded2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.1166387
+      value: 5.626236
       objectReference: {fileID: 0}
     - target: {fileID: 2706798050133009712, guid: 4bee1994d83fcff478d6a2ff552bded2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -152,7 +152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2706798050133009712, guid: 4bee1994d83fcff478d6a2ff552bded2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.21
+      value: 5.64
       objectReference: {fileID: 0}
     - target: {fileID: 2706798050133009712, guid: 4bee1994d83fcff478d6a2ff552bded2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -282,6 +282,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &853337328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2350064742732706547, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &853337336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853337328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31596ebf3b78c04997949b946b80d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelLoadDelay: 2
+  success: {fileID: 8300000, guid: f551094b4cb7309478c11282adcc8fb8, type: 3}
+  crash: {fileID: 8300000, guid: 0d3f8ff9f7a9ec4478c20bade8346b80, type: 3}
+  successParticles: {fileID: 2877162438240502950}
+  crashParticles: {fileID: 2877162438240502949}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Launch Pad
       objectReference: {fileID: 0}
+    - target: {fileID: 6095941153253441184, guid: 6b4a1eba0f61ba948a3c2c349fda9db9, type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b4a1eba0f61ba948a3c2c349fda9db9, type: 3}
 --- !u!1001 &2877162438240502948
@@ -430,10 +456,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 258111601, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
+    - target: {fileID: 1244306226587415755, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: mainThrust
+      value: 1000.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1244306226587415755, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: rotationThrust
+      value: 10.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 1244306226587415755, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: mainEngineParticles
+      value: 
+      objectReference: {fileID: 2877162438240502953}
+    - target: {fileID: 1244306226587415755, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: leftThrusterParticles
+      value: 
+      objectReference: {fileID: 2877162438240502951}
+    - target: {fileID: 1244306226587415755, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: rightThrusterParticles
+      value: 
+      objectReference: {fileID: 2877162438240502952}
     - target: {fileID: 2350064742732706547, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -443,12 +485,16 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9018126649473119362, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018126649473119362, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.67
       objectReference: {fileID: 0}
     - target: {fileID: 9018126649473119362, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.09
       objectReference: {fileID: 0}
     - target: {fileID: 9018126649473119362, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -484,6 +530,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+--- !u!198 &2877162438240502949 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7560223999887463478, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2877162438240502950 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7566196825106882987, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2877162438240502951 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2973751422878627831, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2877162438240502952 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5340650992677588398, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2877162438240502953 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3691649235821500588, guid: 2fbbc3fb0a5d7074b84feaf156109d6f, type: 3}
+  m_PrefabInstance: {fileID: 2877162438240502948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2925518377009228254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,6 +565,10 @@ PrefabInstance:
     - target: {fileID: 142256021494393361, guid: 2f0b72fa9940aa240b9946d7599a8c3c, type: 3}
       propertyPath: m_Name
       value: Landing Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 142256021494393361, guid: 2f0b72fa9940aa240b9946d7599a8c3c, type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 5314830774806899363, guid: 2f0b72fa9940aa240b9946d7599a8c3c, type: 3}
       propertyPath: m_RootOrder
