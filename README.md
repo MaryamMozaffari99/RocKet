@@ -6,7 +6,3 @@ I still don't know about "COPYRIGHT" rules...
 If there is problem or some mistake happened Please send me Email 
 Email: mrybusinessbridge@gmail.com
 Thank you :)
-
-
-![Alt text]("E:\Rocket.png" "Scene")
-<img src="E:\Rocket.png" alt="Alt text" title="Optional title">
